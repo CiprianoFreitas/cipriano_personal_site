@@ -15,10 +15,15 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="All posts"
+          title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Bio />
+        <ul style={{ listStyle: `none` }}>
+          <li style={{ display: `inline` }}><a href="//music.cipri.codes"><span aria-hidden="true">🎧</span> Music</a></li>
+          <li style={{ marginLeft: rhythm(1 / 4), display: `inline` }}><a href="//music.cipri.codes"><span aria-hidden="true">🐙</span> Github</a></li>
+          <li style={{ marginLeft: rhythm(1 / 4), display: `inline` }}><a href="//music.cipri.codes"><span aria-hidden="true">🐦</span> Twitter</a></li>
+        </ul>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           return (
