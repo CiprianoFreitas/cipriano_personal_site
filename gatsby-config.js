@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Cipri 👋`,
     author: `Cipriano Freitas`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Cipri`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
       twitter: `ciprianofreitas`,
@@ -57,8 +57,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Cipri`,
+        short_name: `Cipri`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
