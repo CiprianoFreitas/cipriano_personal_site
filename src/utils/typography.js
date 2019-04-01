@@ -1,8 +1,13 @@
 import Typography from "typography";
 import Wordpress2016 from "typography-theme-wordpress-2016";
 
+Wordpress2016.headerFontFamily = ['Lora', 'sans-serif'];
+
 Wordpress2016.overrideThemeStyles = () => {
   return {
+    h1: {
+      fontFamily: Wordpress2016.headerFontFamily.join(','),
+    },
     "a.gatsby-resp-image-link": {
       boxShadow: `none`
     }
