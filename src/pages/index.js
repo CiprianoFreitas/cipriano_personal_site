@@ -9,7 +9,7 @@ import { rhythm } from "../utils/typography";
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
+    const { title: siteTitle, social } = data.site.siteMetadata;
     const posts = data.allMarkdownRemark.edges;
 
     return (
@@ -21,8 +21,8 @@ class BlogIndex extends React.Component {
         <Bio />
         <ul style={{ listStyle: `none` }}>
           <li style={{ display: `inline` }}><a href="//music.cipri.codes"><span aria-hidden="true">🎧</span> Music</a></li>
-          <li style={{ marginLeft: rhythm(1 / 4), display: `inline` }}><a href="//music.cipri.codes"><span aria-hidden="true">🐙</span> Github</a></li>
-          <li style={{ marginLeft: rhythm(1 / 4), display: `inline` }}><a href="//music.cipri.codes"><span aria-hidden="true">🐦</span> Twitter</a></li>
+          <li style={{ marginLeft: rhythm(1 / 4), display: `inline` }}><a href={`https://github.com/${social.twitter}`}><span aria-hidden="true">🐙</span> Github</a></li>
+          <li style={{ marginLeft: rhythm(1 / 4), display: `inline` }}><a href={`https://twitter.com/${social.twitter}`}><span aria-hidden="true">🐦</span> Twitter</a></li>
         </ul>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
@@ -58,6 +58,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        social {
+          twitter
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
