@@ -69,6 +69,7 @@ module.exports = {
     // `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
