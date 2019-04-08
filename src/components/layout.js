@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   body {
       min-height: 100%;
       border: 20px solid black;
-      padding: 10vw 0 0 10vw;
+      padding: 10vw;
   }
 
   /* apply a natural box layout model to all elements, but allowing components to change */
@@ -34,6 +34,8 @@ class Layout extends React.Component {
       header = (
         <h1
           style={{
+            fontFamily: `'Lora',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif`,
+            fontWeight: 'bold',
             marginTop: 0
           }}
         >
