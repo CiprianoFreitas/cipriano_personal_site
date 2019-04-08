@@ -1,8 +1,29 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Normalize } from 'styled-normalize'
+import { Normalize } from 'styled-normalize';
+import { createGlobalStyle } from 'styled-components';
 
-import "./layout.css"
+const GlobalStyle = createGlobalStyle`
+  html {
+      height: 100%;
+  }
+
+  body {
+      min-height: 100%;
+      border: 20px solid black;
+      padding: 10vw 0 0 10vw;
+  }
+
+  /* apply a natural box layout model to all elements, but allowing components to change */
+  html {
+      box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+      box-sizing: inherit;
+  }
+`
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props;
@@ -51,6 +72,7 @@ class Layout extends React.Component {
     }
     return (
       <>
+        <GlobalStyle />
         <Normalize />
         <div
           style={{
