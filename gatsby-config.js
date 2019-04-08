@@ -70,12 +70,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-remove-serviceworker`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+    `gatsby-plugin-remove-serviceworker`
   ],
 }
