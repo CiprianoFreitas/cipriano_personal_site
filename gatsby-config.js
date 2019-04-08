@@ -70,6 +70,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-remove-serviceworker`
   ],
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import { Normalize } from 'styled-normalize'
 
 import "./layout.css"
 class Layout extends React.Component {
@@ -49,18 +50,21 @@ class Layout extends React.Component {
       );
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-        }}
-      >
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built in Amsterdam 🚲
-        </footer>
-      </div>
+      <>
+        <Normalize />
+        <div
+          style={{
+            marginLeft: `auto`,
+            marginRight: `auto`,
+          }}
+        >
+          <header>{header}</header>
+          <main>{children}</main>
+          <footer>
+            © {new Date().getFullYear()}, Built in Amsterdam 🚲
+          </footer>
+        </div>
+      </>
     );
   }
 }
