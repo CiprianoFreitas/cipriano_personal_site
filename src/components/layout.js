@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Normalize } from 'styled-normalize';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -10,8 +10,14 @@ const GlobalStyle = createGlobalStyle`
 
   body {
       min-height: 100%;
-      border: 20px solid black;
+      border: 20px solid ${props => props.theme.accent};
       padding: 10vw;
+      background: ${props => props.theme.background};
+      color: ${props => props.theme.foreground};
+  }
+
+  a{
+    color: ${props => props.theme.accent};
   }
 
   /* apply a natural box layout model to all elements, but allowing components to change */
@@ -23,6 +29,12 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: inherit;
   }
 `
+
+const theme = {
+  background: '#282F44',
+  foreground: 'white',
+  accent: '#639FAB'
+}
 
 class Layout extends React.Component {
   render() {
@@ -73,22 +85,24 @@ class Layout extends React.Component {
       );
     }
     return (
-      <>
-        <GlobalStyle />
-        <Normalize />
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-          }}
-        >
-          <header>{header}</header>
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built in Amsterdam 🚲
+      <ThemeProvider theme={theme}>
+        <>
+          <GlobalStyle />
+          <Normalize />
+          <div
+            style={{
+              marginLeft: `auto`,
+              marginRight: `auto`,
+            }}
+          >
+            <header>{header}</header>
+            <main>{children}</main>
+            <footer>
+              © {new Date().getFullYear()}, Built in Amsterdam 🚲
           </footer>
-        </div>
-      </>
+          </div>
+        </>
+      </ThemeProvider>
     );
   }
 }
