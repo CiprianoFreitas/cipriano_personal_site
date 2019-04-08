@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { rhythm } from "../utils/typography";
 
 class BlogIndex extends React.Component {
   render() {
@@ -21,8 +20,8 @@ class BlogIndex extends React.Component {
         <Bio />
         <ul style={{ listStyle: `none` }}>
           <li style={{ display: `inline` }}><a href="//music.cipri.codes"><span aria-hidden="true">🎧</span> Music</a></li>
-          <li style={{ marginLeft: rhythm(1 / 4), display: `inline` }}><a href={`https://github.com/${social.twitter}`}><span aria-hidden="true">🐙</span> Github</a></li>
-          <li style={{ marginLeft: rhythm(1 / 4), display: `inline` }}><a href={`https://twitter.com/${social.twitter}`}><span aria-hidden="true">🐦</span> Twitter</a></li>
+          <li style={{ display: `inline` }}><a href={`https://github.com/${social.twitter}`}><span aria-hidden="true">🐙</span> Github</a></li>
+          <li style={{ display: `inline` }}><a href={`https://twitter.com/${social.twitter}`}><span aria-hidden="true">🐦</span> Twitter</a></li>
         </ul>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
@@ -30,7 +29,6 @@ class BlogIndex extends React.Component {
             <div key={node.fields.slug}>
               <h3
                 style={{
-                  marginBottom: rhythm(1 / 4)
                 }}
               >
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
