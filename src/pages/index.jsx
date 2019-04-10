@@ -2,9 +2,15 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
+import styled from 'styled-components';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+
+const SocialItem = styled.li`
+    display: inline;
+    margin-right: 1rem;
+`;
 
 const BlogIndex = ({ data, location }) => {
     const { title: siteTitle, social } = data.site.siteMetadata;
@@ -17,22 +23,27 @@ const BlogIndex = ({ data, location }) => {
                 keywords={['blog', 'gatsby', 'javascript', 'react']}
             />
             <Bio />
-            <ul style={{ listStyle: 'none' }}>
-                <li style={{ display: 'inline' }}>
+            <ul
+                css="
+                    list-style: none;
+                    padding: 0;
+                "
+            >
+                <SocialItem>
                     <a href="//music.cipri.codes">
                         <span aria-hidden="true">🎧</span> Music
                     </a>
-                </li>
-                <li style={{ display: 'inline' }}>
+                </SocialItem>
+                <SocialItem>
                     <a href={`https://github.com/${social.twitter}`}>
                         <span aria-hidden="true">🐙</span> Github
                     </a>
-                </li>
-                <li style={{ display: 'inline' }}>
+                </SocialItem>
+                <SocialItem>
                     <a href={`https://twitter.com/${social.twitter}`}>
                         <span aria-hidden="true">🐦</span> Twitter
                     </a>
-                </li>
+                </SocialItem>
             </ul>
             {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug;

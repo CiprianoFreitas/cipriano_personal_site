@@ -32,10 +32,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const theme = {
-    background: 'white',
-    foreground: 'black',
+    background: 'black',
+    foreground: 'white',
     accent: 'black',
-    action: 'blue',
+    action: 'cornflowerblue',
 };
 
 const Layout = ({ location, title, children }) => {
@@ -50,6 +50,7 @@ const Layout = ({ location, title, children }) => {
                     font-family: 'Lora', serif;
                     font-weight: bold;
                     margin-top: 0;
+                    font-size: 5rem;
                 "
             >
                 <Link
