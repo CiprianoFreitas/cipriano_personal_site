@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 10vw;
       background: ${props => props.theme.background};
       color: ${props => props.theme.foreground};
+      font-family: 'Open Sans', sans-serif;
   }
 
   a{
@@ -47,7 +48,7 @@ const Layout = ({ location, title, children }) => {
             <h1
                 style={{
                     fontFamily:
-                        "'Lora',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif",
+                        "'Lora', serif",
                     fontWeight: 'bold',
                     marginTop: 0,
                 }}
@@ -69,7 +70,7 @@ const Layout = ({ location, title, children }) => {
             <h3
                 style={{
                     fontFamily:
-                        "'Lora',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif",
+                        "'Lora', serif",
                     marginTop: 0,
                 }}
             >
