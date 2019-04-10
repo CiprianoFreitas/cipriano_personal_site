@@ -46,19 +46,18 @@ const Layout = ({ location, title, children }) => {
     if (location.pathname === rootPath) {
         header = (
             <h1
-                style={{
-                    fontFamily:
-                        "'Lora', serif",
-                    fontWeight: 'bold',
-                    marginTop: 0,
-                }}
+                css="
+                    font-family: 'Lora', serif;
+                    font-weight: bold;
+                    margin-top: 0;
+                "
             >
                 <Link
-                    style={{
-                        boxShadow: 'none',
-                        textDecoration: 'none',
-                        color: 'inherit',
-                    }}
+                    css="
+                        box-shadow: none;
+                        text-decoration: none;
+                        color: inherit;
+                    "
                     to="/"
                 >
                     {title}
@@ -68,18 +67,17 @@ const Layout = ({ location, title, children }) => {
     } else {
         header = (
             <h3
-                style={{
-                    fontFamily:
-                        "'Lora', serif",
-                    marginTop: 0,
-                }}
+                css="
+                    font-family: 'Lora', serif;
+                    margin-top: 0;
+                "
             >
                 <Link
-                    style={{
-                        boxShadow: 'none',
-                        textDecoration: 'none',
-                        color: 'inherit',
-                    }}
+                    css="
+                        box-shadow: none;
+                        text-decoration: none;
+                        color: inherit;
+                    "
                     to="/"
                 >
                     {title}
@@ -93,10 +91,10 @@ const Layout = ({ location, title, children }) => {
                 <GlobalStyle />
                 <Normalize />
                 <div
-                    style={{
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                    }}
+                    css="
+                        margin-left: auto;
+                        margin-right: auto;
+                    "
                 >
                     <header>{header}</header>
                     <main>{children}</main>
