@@ -38,7 +38,8 @@
     "react-typography": "^0.16.19",
     "styled-components": "^4.2.0",
     "styled-normalize": "^8.0.6",
-    "typeface-lora": "^0.0.72"
+    "typeface-lora": "^0.0.72",
+    "typeface-open-sans": "^0.0.54"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
