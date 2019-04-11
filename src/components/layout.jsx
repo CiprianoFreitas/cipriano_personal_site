@@ -9,12 +9,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-      min-height: 100%;
-      border: 20px solid ${props => props.theme.accent};
-      padding: 10vw;
-      background: ${props => props.theme.background};
-      color: ${props => props.theme.foreground};
-      font-family: 'Open Sans', sans-serif;
+    min-height: 100%;
+    ${'' /* border: 20px solid ${props => props.theme.accent}; */}
+    padding: 10vw;
+    background: ${props => props.theme.background};
+    color: ${props => props.theme.foreground};
+    font-family: 'Open Sans', sans-serif;
+
+    @media (max-width: 600px) {
+        padding:1rem;
+    }
   }
 
   a{
