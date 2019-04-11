@@ -32,10 +32,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const theme = {
-    background: 'black',
+    background: '#172B4D',
     foreground: 'white',
-    accent: 'black',
-    action: 'cornflowerblue',
+    accent: '#172B4D',
+    action: '#FFAB00',
 };
 
 const Layout = ({ location, title, children }) => {
@@ -46,12 +46,13 @@ const Layout = ({ location, title, children }) => {
     if (location.pathname === rootPath) {
         header = (
             <h1
-                css="
+                css={`
                     font-family: 'Lora', serif;
                     font-weight: bold;
                     margin-top: 0;
                     font-size: 5rem;
-                "
+                    color: ${props => props.theme.action};
+                `}
             >
                 <Link
                     css="
