@@ -44,11 +44,12 @@ function Bio() {
                         <Image
                             fixed={data.avatar.childImageSharp.fixed}
                             alt={author}
-                            style={{
-                                marginBottom: 0,
-                                minWidth: 50,
-                                borderRadius: '100%',
-                            }}
+                            css="
+                                margin-bottom: 0;
+                                margin-right: 0.5rem;
+                                min-width: 50px;
+                                border-radius: 100%;
+                            "
                             imgStyle={{
                                 borderRadius: '50%',
                             }}
