@@ -51,7 +51,7 @@ const Layout = ({ location, title, children }) => {
         header = (
             <h1
                 css={`
-
+                    font-family: 'Lora', serif;
                     color: ${props => props.theme.action};
                 `}
             >
