@@ -50,7 +50,10 @@ const Layout = ({ location, title, children }) => {
     if (location.pathname === rootPath) {
         header = (
             <h1
+                css={`
 
+                    color: ${props => props.theme.action};
+                `}
             >
                 <Link
                     css="
