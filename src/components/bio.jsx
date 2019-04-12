@@ -37,9 +37,10 @@ function Bio() {
                 const { author } = data.site.siteMetadata;
                 return (
                     <div
-                        style={{
-                            display: 'flex',
-                        }}
+                        css="
+                            display: flex;
+                            align-items: center;
+                        "
                     >
                         <Image
                             fixed={data.avatar.childImageSharp.fixed}
