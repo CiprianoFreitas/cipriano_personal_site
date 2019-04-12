@@ -53,7 +53,8 @@ const Layout = ({ location, title, children }) => {
                 css={`
                     font-family: 'Lora', serif;
                     font-weight: bold;
-                    // margin-top: 0;
+                    margin-top: 0;
+                    margin-bottom: 2rem;
                     font-size: 5rem;
                     color: ${props => props.theme.action};
                 `}
