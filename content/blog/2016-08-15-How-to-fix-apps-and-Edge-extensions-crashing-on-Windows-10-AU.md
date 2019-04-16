@@ -1,6 +1,6 @@
 ---
 title: How to fix apps and Edge extensions crashing on Windows 10 AU
-date: 2019-04-16T15:14:45.629Z
+date: 2015-08-14T22:00:00.000Z
 published: false
 ---
 There have been reports from users, who updated to the latest Windows 10 Anniversary Update, that some apps crash upon starting them and the newly released Edge extensions cannot be installed.
