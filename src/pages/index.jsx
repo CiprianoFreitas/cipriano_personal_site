@@ -66,12 +66,12 @@ const BlogIndex = ({ data, location }) => {
                             </a>
                         </SocialItem>
                         <SocialItem>
-                            <a href={`https://github.com/${social.handler}`}>
+                            <a href={`https://github.com/${social.handle}`}>
                                 <span aria-hidden="true">🐙</span> Github
                             </a>
                         </SocialItem>
                         <SocialItem>
-                            <a href={`https://twitter.com/${social.handler}`}>
+                            <a href={`https://twitter.com/${social.handle}`}>
                                 <span aria-hidden="true">🐦</span> Twitter
                             </a>
                         </SocialItem>
