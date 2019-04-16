@@ -96,9 +96,11 @@ const BlogIndex = ({ data, location }) => {
                         const title =
                             node.frontmatter.title || node.fields.slug;
                         return (
-                            <div
+                            <Link
                                 key={node.fields.slug}
+                                to={node.fields.slug}
                                 css={`
+                                    display: block;
                                     border-left: 5px solid
                                         ${props => props.theme.action};
                                     padding-left: 1rem;
@@ -106,27 +108,24 @@ const BlogIndex = ({ data, location }) => {
                                     &:hover {
                                         border-left: 15px solid
                                             ${props => props.theme.action};
+                                        border-bottom: none;
                                         }
                                     }
                                 `}
                             >
-                                <h3 css="margin-bottom:0.5rem">
-                                    <Link
-                                        style={{ boxShadow: 'none' }}
-                                        to={node.fields.slug}
-                                    >
-                                        {title}
-                                    </Link>
-                                </h3>
-                                <small>{node.frontmatter.date}</small>
+                                <h3 css="margin-bottom:0.5rem">{title}</h3>
+                                <small css="color: white;">
+                                    {node.frontmatter.date}
+                                </small>
                                 <p
+                                    css="color: white;"
                                     dangerouslySetInnerHTML={{
                                         __html:
                                             node.frontmatter.description ||
                                             node.excerpt,
                                     }}
                                 />
-                            </div>
+                            </Link>
                         );
                     })}
                 </main>
