@@ -27,9 +27,6 @@ const BlogIndex = ({ data, location }) => {
     const { title: siteTitle, social } = data.site.siteMetadata;
     const posts = data.allMarkdownRemark.edges;
 
-    // eslint-disable-next-line no-undef
-    const rootPath = `${__PATH_PREFIX__}/`;
-
     return (
         <Layout location={location} title={siteTitle}>
             <SEO
@@ -39,18 +36,18 @@ const BlogIndex = ({ data, location }) => {
             <Grid>
                 <div>
                     <header>
-                    <h1
-                        css={`
-                            font-family: 'Lora', serif;
-                            font-weight: bold;
-                            margin-top: 0;
-                            margin-bottom: 2rem;
-                            font-size: 5rem;
-                            color: ${props => props.theme.action};
-                        `}
-                    >
-                        {siteTitle}
-                    </h1>
+                        <h1
+                            css={`
+                                font-family: 'Lora', serif;
+                                font-weight: bold;
+                                margin-top: 0;
+                                margin-bottom: 2rem;
+                                font-size: 5rem;
+                                color: ${props => props.theme.action};
+                            `}
+                        >
+                            {siteTitle}
+                        </h1>
                     </header>
                     <Bio />
                     <ul
@@ -76,8 +73,9 @@ const BlogIndex = ({ data, location }) => {
                             </a>
                         </SocialItem>
                         <SocialItem>
-                            <a href={`https://til.cipri.codes`}>
-                                <span aria-hidden="true">🧠</span> Today I Learned
+                            <a href="https://til.cipri.codes">
+                                <span aria-hidden="true">🧠</span> Today I
+                                Learned
                             </a>
                         </SocialItem>
                     </ul>
@@ -92,7 +90,8 @@ const BlogIndex = ({ data, location }) => {
                             color: ${props => props.theme.action};
                         `}
                     >
-                        📝 Stuff I've written
+                        <span aria-hidden="true">📝</span>
+                        {"Stuff I've written"}
                     </h2>
                     {posts.map(({ node }) => {
                         const title =
