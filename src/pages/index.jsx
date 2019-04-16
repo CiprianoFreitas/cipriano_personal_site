@@ -74,8 +74,7 @@ const BlogIndex = ({ data, location }) => {
                         </SocialItem>
                         <SocialItem>
                             <a href="https://til.cipri.codes">
-                                <span aria-hidden="true">🧠</span> Today I
-                                Learned
+                                <span aria-hidden="true">🧠</span> TIL
                             </a>
                         </SocialItem>
                     </ul>
@@ -91,14 +90,14 @@ const BlogIndex = ({ data, location }) => {
                         `}
                     >
                         <span aria-hidden="true">📝</span>
-                        {"Stuff I've written"}
+                        {" SMALLStuff I've written"}
                     </h2>
                     {posts.map(({ node }) => {
                         const title =
                             node.frontmatter.title || node.fields.slug;
                         return (
                             <div key={node.fields.slug}>
-                                <h3 style={{}}>
+                                <h3 css="margin-bottom:0.5rem">
                                     <Link
                                         style={{ boxShadow: 'none' }}
                                         to={node.fields.slug}
