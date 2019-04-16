@@ -102,6 +102,7 @@ const BlogIndex = ({ data, location }) => {
                                     border-left: 5px solid
                                         ${props => props.theme.action};
                                     padding-left: 1rem;
+                                    margin-bottom: 2rem;
                                     &:hover {
                                         border-left: 15px solid
                                             ${props => props.theme.action};
