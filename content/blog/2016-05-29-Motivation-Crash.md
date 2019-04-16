@@ -1,6 +1,8 @@
 ---
-published: false
+published: true
 layout: post
+title: Motivation Crash
+date: "2016-05-29"
 section-type: post
 category: Blog
 tags:
