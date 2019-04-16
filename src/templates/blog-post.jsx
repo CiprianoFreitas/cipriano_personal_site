@@ -17,17 +17,39 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
                 title={post.frontmatter.title}
                 description={post.frontmatter.description || post.excerpt}
             />
-            <h1>{post.frontmatter.title}</h1>
-            <p
-                style={{
-                    display: 'block',
-                }}
-            >
-                {post.frontmatter.date}
-            </p>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <hr style={{}} />
-            <Bio />
+            <header>
+                <h3
+                    css={`
+                        font-family: 'Lora', serif;
+                        margin-top: 0;
+                        color: ${props => props.theme.action};
+                    `}
+                >
+                    <Link
+                        css="
+                            box-shadow: none;
+                            text-decoration: none;
+                            color: inherit;
+                        "
+                        to="/"
+                    >
+                        ◀ {siteTitle}
+                    </Link>
+                </h3>
+            </header>
+            <article>
+                <h1>{post.frontmatter.title}</h1>
+                <p
+                    css="
+                        display: 'block',
+                    "
+                >
+                    {post.frontmatter.date}
+                </p>
+                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                <hr style={{}} />
+                <Bio />
+            </article>
 
             <ul
                 style={{
