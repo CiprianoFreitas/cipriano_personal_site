@@ -66,12 +66,12 @@ const BlogIndex = ({ data, location }) => {
                             </a>
                         </SocialItem>
                         <SocialItem>
-                            <a href={`https://github.com/${social.handle}`}>
+                            <a href={`https://github.com/${social.handler}`}>
                                 <span aria-hidden="true">🐙</span> Github
                             </a>
                         </SocialItem>
                         <SocialItem>
-                            <a href={`https://twitter.com/${social.handle}`}>
+                            <a href={`https://twitter.com/${social.handler}`}>
                                 <span aria-hidden="true">🐦</span> Twitter
                             </a>
                         </SocialItem>
@@ -132,7 +132,7 @@ export const pageQuery = graphql`
             siteMetadata {
                 title
                 social {
-                    handle
+                    twitter
                 }
             }
         }

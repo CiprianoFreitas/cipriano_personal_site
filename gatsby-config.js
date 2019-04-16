@@ -5,7 +5,7 @@ module.exports = {
         description: `Cipri`,
         siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
         social: {
-            handle: `ciprianofreitas`,
+            handler: `ciprianofreitas`,
         },
     },
     plugins: [
