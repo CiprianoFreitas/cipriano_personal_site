@@ -28,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
 
   a{
     color: ${props => props.theme.action};
+    text-decoration:none;
+    &:hover {
+        border-bottom: 3px solid ${props => props.theme.action};
+    }
   }
 
   /* apply a natural box layout model to all elements, but allowing components to change */
@@ -93,7 +97,7 @@ const Layout = ({ location, title, children }) => {
                     "
                     to="/"
                 >
-                    {title}
+                    ◀ {title}
                 </Link>
             </h3>
         );
