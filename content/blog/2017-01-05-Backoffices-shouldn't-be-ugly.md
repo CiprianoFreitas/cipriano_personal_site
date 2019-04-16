@@ -1,8 +1,10 @@
 ---
-published: false
+published: true
 layout: post
 section-type: post
 category: Blog
+title: Backoffices Shouldn't Be Ugly
+date: "2017-01-05"
 tags:
   - technical
 ---
