@@ -90,7 +90,7 @@ const BlogIndex = ({ data, location }) => {
                         `}
                     >
                         <span aria-hidden="true">📝</span>
-                        {" SMALLStuff I've written"}
+                        {" Stuff I've written"}
                     </h2>
                     {posts.map(({ node }) => {
                         const title =
