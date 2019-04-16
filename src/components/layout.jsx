@@ -9,8 +9,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     min-height: 100%;
-    ${'' /* border: 20px solid ${props => props.theme.accent}; */}
-    padding: 10vw;
+    border-top: 10px solid ${props => props.theme.action};
+    padding: 5vw 10vw;
     background-color: ${props => props.theme.background};
     color: ${props => props.theme.foreground};
     font-family: 'Open Sans', sans-serif;

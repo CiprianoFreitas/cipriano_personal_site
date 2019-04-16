@@ -96,7 +96,19 @@ const BlogIndex = ({ data, location }) => {
                         const title =
                             node.frontmatter.title || node.fields.slug;
                         return (
-                            <div key={node.fields.slug}>
+                            <div
+                                key={node.fields.slug}
+                                css={`
+                                    border-left: 5px solid
+                                        ${props => props.theme.action};
+                                    padding-left: 1rem;
+                                    &:hover {
+                                        border-left: 15px solid
+                                            ${props => props.theme.action};
+                                        }
+                                    }
+                                `}
+                            >
                                 <h3 css="margin-bottom:0.5rem">
                                     <Link
                                         style={{ boxShadow: 'none' }}
