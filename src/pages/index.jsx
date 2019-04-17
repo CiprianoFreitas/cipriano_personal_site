@@ -103,7 +103,7 @@ const BlogIndex = ({ data, location }) => {
                                     display: block;
                                     border-left: 5px solid
                                         ${props => props.theme.action};
-                                    transition: border-width 0.05s ease-in-out;
+                                    transition: border-width 0.1s ease-in-out;
                                     padding-left: 1rem;
                                     margin-bottom: 2rem;
                                     &:hover {
