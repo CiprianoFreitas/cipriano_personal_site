@@ -115,11 +115,19 @@ const BlogIndex = ({ data, location }) => {
                                 `}
                             >
                                 <h3 css="margin-bottom:0.5rem">{title}</h3>
-                                <small css="color: white;">
+                                <small
+                                    css={`
+                                        color: ${props =>
+                                            props.theme.foreground};
+                                    `}
+                                >
                                     {node.frontmatter.date}
                                 </small>
                                 <p
-                                    css="color: white;"
+                                    css={`
+                                        color: ${props =>
+                                            props.theme.foreground};
+                                    `}
                                     dangerouslySetInnerHTML={{
                                         __html:
                                             node.frontmatter.description ||

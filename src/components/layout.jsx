@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Normalize } from 'styled-normalize';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -38,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const theme = {
+const initialTheme = {
     background: '#172B4D',
     foreground: 'white',
     accent: '#172B4D',
@@ -46,6 +47,12 @@ const theme = {
 };
 
 const Layout = ({ children }) => {
+    // eslint-disable-next-line no-undef
+    const params = new URLSearchParams(window.location.search);
+    const themeSwitcher = params.get('bacon') == 1;
+
+    const [theme, setTheme] = useState(initialTheme);
+
     return (
         <ThemeProvider theme={theme}>
             <>
@@ -61,6 +68,12 @@ const Layout = ({ children }) => {
                     <footer>
                         © {new Date().getFullYear()}, Built in Amsterdam 🚲
                     </footer>
+                    {themeSwitcher ? (
+                        <ThemeSwitcher
+                            currentTheme={theme}
+                            onSwitched={setTheme}
+                        />
+                    ) : null}
                 </div>
             </>
         </ThemeProvider>
