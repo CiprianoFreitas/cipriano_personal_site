@@ -1,12 +1,7 @@
 ---
-published: true
-layout: post
-"section-type": post
-category: Blog
 title: If You Sleep More Than 6 Hours Per Night You Are Weak
-date: "2016-02-18"
-tags: 
-  - personal
+date: '2016-02-18'
+published: false
 ---
 
 
