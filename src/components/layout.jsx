@@ -47,9 +47,13 @@ const initialTheme = {
 };
 
 const Layout = ({ children }) => {
+    let isThemeSwitcherEnabled = false;
     // eslint-disable-next-line no-undef
-    const params = new URLSearchParams(window.location.search);
-    const themeSwitcher = params.get('bacon') == 1;
+    if (typeof window !== 'undefined') {
+        // eslint-disable-next-line no-undef
+        const params = new URLSearchParams(window.location.search);
+        isThemeSwitcherEnabled = params.get('bacon') === "1";
+    }
 
     const [theme, setTheme] = useState(initialTheme);
 
@@ -68,7 +72,7 @@ const Layout = ({ children }) => {
                     <footer>
                         © {new Date().getFullYear()}, Built in Amsterdam 🚲
                     </footer>
-                    {themeSwitcher ? (
+                    {isThemeSwitcherEnabled ? (
                         <ThemeSwitcher
                             currentTheme={theme}
                             onSwitched={setTheme}
