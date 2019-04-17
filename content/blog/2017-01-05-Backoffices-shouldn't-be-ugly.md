@@ -1,12 +1,7 @@
 ---
-published: true
-layout: post
-section-type: post
-category: Blog
 title: Backoffices Shouldn't Be Ugly
-date: "2017-01-05"
-tags:
-  - technical
+date: '2017-01-05'
+published: false
 ---
 
 Companies nowadays need tools that are specifically designed for them, for instance, their use cases, tailored to their businesses. 
