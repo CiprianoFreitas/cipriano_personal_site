@@ -42,19 +42,6 @@ function Bio() {
                             align-items: center;
                         "
                     >
-                        <Image
-                            fixed={data.avatar.childImageSharp.fixed}
-                            alt={author}
-                            css="
-                                margin-bottom: 0;
-                                margin-right: 0.5rem;
-                                min-width: 50px;
-                                border-radius: 100%;
-                            "
-                            imgStyle={{
-                                borderRadius: '50%',
-                            }}
-                        />
                         <p>
                             <strong>{author}</strong> lives in Amsterdam and he
                             struggles with biking every day.
