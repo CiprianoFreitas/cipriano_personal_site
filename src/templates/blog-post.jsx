@@ -13,68 +13,70 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
 
     return (
         <Layout location={location} title={siteTitle}>
-            <SEO
-                title={post.frontmatter.title}
-                description={post.frontmatter.description || post.excerpt}
-            />
-            <header>
-                <h3
-                    css={`
-                        font-family: 'Lora', serif;
-                        margin-top: 0;
-                        color: ${props => props.theme.action};
-                    `}
-                >
-                    <Link
-                        css="
-                            box-shadow: none;
-                            text-decoration: none;
-                            color: inherit;
-                        "
-                        to="/"
+            <div css="padding: 5vw 10vw;">
+                <SEO
+                    title={post.frontmatter.title}
+                    description={post.frontmatter.description || post.excerpt}
+                />
+                <header>
+                    <h3
+                        css={`
+                            font-family: 'Lora', serif;
+                            margin-top: 0;
+                            color: ${props => props.theme.action};
+                        `}
                     >
-                        ◀ {siteTitle}
-                    </Link>
-                </h3>
-            </header>
-            <article>
-                <h1>{post.frontmatter.title}</h1>
-                <p
-                    css="
-                        display: 'block',
-                    "
+                        <Link
+                            css="
+                                box-shadow: none;
+                                text-decoration: none;
+                                color: inherit;
+                            "
+                            to="/"
+                        >
+                            ◀ {siteTitle}
+                        </Link>
+                    </h3>
+                </header>
+                <article>
+                    <h1>{post.frontmatter.title}</h1>
+                    <p
+                        css="
+                            display: 'block',
+                        "
+                    >
+                        {post.frontmatter.date}
+                    </p>
+                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                    <hr style={{}} />
+                    <Bio />
+                </article>
+    
+                <ul
+                    style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'space-between',
+                        listStyle: 'none',
+                        padding: 0,
+                    }}
                 >
-                    {post.frontmatter.date}
-                </p>
-                <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                <hr style={{}} />
-                <Bio />
-            </article>
-
-            <ul
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-between',
-                    listStyle: 'none',
-                    padding: 0,
-                }}
-            >
-                <li>
-                    {previous && (
-                        <Link to={previous.fields.slug} rel="prev">
-                            ← {previous.frontmatter.title}
-                        </Link>
-                    )}
-                </li>
-                <li>
-                    {next && (
-                        <Link to={next.fields.slug} rel="next">
-                            {next.frontmatter.title} →
-                        </Link>
-                    )}
-                </li>
-            </ul>
+                    <li>
+                        {previous && (
+                            <Link to={previous.fields.slug} rel="prev">
+                                ← {previous.frontmatter.title}
+                            </Link>
+                        )}
+                    </li>
+                    <li>
+                        {next && (
+                            <Link to={next.fields.slug} rel="next">
+                                {next.frontmatter.title} →
+                            </Link>
+                        )}
+                    </li>
+                </ul>
+            </div>
         </Layout>
     );
 };

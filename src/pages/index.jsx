@@ -19,7 +19,6 @@ const SocialItem = styled.li`
 
 const Grid = styled.div`
     display: grid;
-    column-gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
     & > * {
@@ -52,7 +51,19 @@ const BlogIndex = ({ data, location }) => {
                             {siteTitle}
                         </h1>
                     </header>
-                    <Bio />
+                    <div>
+                        <p>
+                            My name is <strong>Cipriano Freitas</strong> and I
+                            currently live in Amsterdam helping people book
+                            their travels at <strong>Booking.com</strong>.
+                        </p>
+
+                        <p>
+                            I'm a developer by day and a musician by night.
+                            Sometimes I also write things
+                        </p>
+                        <br />
+                    </div>
                     <ul
                         css="
                             list-style: none;
