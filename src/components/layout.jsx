@@ -14,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.background};
     color: ${props => props.theme.foreground};
     font-family: 'Open Sans', sans-serif;
+    @media (max-width: 749px) {
+        border: 10px solid ${props => props.theme.action};
+    }
   }
 
   a {
