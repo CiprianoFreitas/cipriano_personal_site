@@ -25,6 +25,23 @@ const Grid = styled.div`
         padding: 5vw 10vw;
     }
 `;
+const MyDescription = () => {
+    return (
+        <div>
+            <p>
+                My name is <strong>Cipriano Freitas</strong> and I currently
+                live in Amsterdam helping people book their travels at{' '}
+                <strong>Booking.com</strong>.
+            </p>
+
+            <p>
+                I'm a developer by day and a musician by night. Sometimes I also
+                write things.
+            </p>
+            <br />
+        </div>
+    );
+};
 
 const BlogIndex = ({ data, location }) => {
     const { title: siteTitle, social } = data.site.siteMetadata;
@@ -51,19 +68,7 @@ const BlogIndex = ({ data, location }) => {
                             {siteTitle}
                         </h1>
                     </header>
-                    <div>
-                        <p>
-                            My name is <strong>Cipriano Freitas</strong> and I
-                            currently live in Amsterdam helping people book
-                            their travels at <strong>Booking.com</strong>.
-                        </p>
-
-                        <p>
-                            I'm a developer by day and a musician by night.
-                            Sometimes I also write things
-                        </p>
-                        <br />
-                    </div>
+                    <MyDescription />
                     <ul
                         css="
                             list-style: none;
