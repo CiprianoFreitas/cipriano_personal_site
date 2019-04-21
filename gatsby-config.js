@@ -61,7 +61,7 @@ module.exports = {
                 short_name: `Cipri`,
                 start_url: `/`,
                 background_color: `#ffffff`,
-                theme_color: `#172B4D`,
+                theme_color: `#E5E5E5`,
                 display: `minimal-ui`,
                 icon: `content/assets/favicon.png`,
             },
