@@ -131,21 +131,18 @@ const Index = () => (
                 <Inner>
                     <Title>Get in touch</Title>
                     <ContactText>
-                        Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or
-                        find me on other platforms:{' '}
-                        <a href="https://dribbble.com/LekoArts">Dribbble</a> &{' '}
-                        <a href="https://www.instagram.com/lekoarts.de/">
-                            Instagram
+                        Say <a href="mailto:cipriano.freitas@outlook.com">Hi</a>{' '}
+                        or find me on other platforms:{' '}
+                        <a href="https://twitter.com/CiprianoFreitas">
+                            Twitter
+                        </a>{' '}
+                        &{' '}
+                        <a href="https://www.linkedin.com/in/ciprianofreitas/">
+                            LinkedIn
                         </a>
                     </ContactText>
                 </Inner>
-                <Footer>
-                    &copy; 2019 by Gatsby Starter Portfolio Cara.{' '}
-                    <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">
-                        Github Repository
-                    </a>
-                    . Made by <a href="https://www.lekoarts.de">LekoArts</a>.
-                </Footer>
+                <Footer>&copy; 2019 by Cipriano Freitas in Amsterdam</Footer>
             </Contact>
         </Parallax>
     </>
