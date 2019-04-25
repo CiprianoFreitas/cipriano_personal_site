@@ -1,14 +1,14 @@
-import React from "react";
-import GlobalStyle from "../styles/global";
-import SEO from "./SEO";
-import "typeface-lora";
-import "typeface-open-sans";
+import React from 'react';
+import GlobalStyle from '../styles/global';
+import SEO from './SEO';
+import 'typeface-lora';
+import 'typeface-open-sans';
 
 const Layout = () => (
-  <>
-    <SEO />
-    <GlobalStyle />
-  </>
+    <>
+        <SEO />
+        <GlobalStyle />
+    </>
 );
 
 export default Layout;
