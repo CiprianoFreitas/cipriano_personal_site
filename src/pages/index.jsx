@@ -42,11 +42,7 @@ const Avatar = styled.img`
 `;
 
 const AboutSub = styled.span`
-    ${tw`text-white pt-12 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
-`;
-
-const AboutDesc = styled.p`
-    ${tw`text-grey-light text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12 text-justify`};
+    ${tw`text-white pt-12 lg:pt-0 lg:pl-12 text-2xl font-sans lg:text-3xl xl:text-4xl`};
 `;
 
 const ContactText = styled.p`
@@ -60,7 +56,7 @@ const Footer = styled.footer`
 const Index = () => (
     <>
         <Layout />
-        <Parallax pages={5}>
+        <Parallax pages={3}>
             <Hero offset={0}>
                 <BigTitle>
                     Hi, <br /> I'm Cipri.
@@ -70,7 +66,7 @@ const Index = () => (
                     of consumer-facing companies.
                 </Subtitle>
             </Hero>
-            <Projects offset={1}>
+            {/* <Projects offset={1}>
                 <Title>Stuff I Wrote</Title>
                 <ProjectsWrapper>
                     <ProjectCard
@@ -105,30 +101,23 @@ const Index = () => (
                         wild animals.
                     </ProjectCard>
                 </ProjectsWrapper>
-            </Projects>
-            <About offset={3}>
+            </Projects> */}
+            <About offset={1}>
                 <Title>About</Title>
                 <AboutHero>
                     <Avatar src={avatar} alt="John Doe" />
                     <AboutSub>
-                        My name is Cipriano Freitas and I currently live in
-                        Amsterdam helping people book their travels at
-                        Booking.com. I'm a developer by day and a musician by
-                        night. Sometimes I also write things.
+                        <p>
+                            My name is Cipriano Freitas and I currently live in
+                            Amsterdam helping people book their travels at{' '}
+                            <a href="https://booking.com">Booking.com</a>.
+                        </p>
+                        <p>I'm a developer by day and a musician by night.</p>{' '}
+                        <p>Sometimes I also write things.</p>
                     </AboutSub>
                 </AboutHero>
-                <AboutDesc>
-                    You know the way you feel when you see a picture of two
-                    otters holding hands? That's how you're gonna feel every
-                    day. My mother cried the day I was born because she knew
-                    she’d never be prettier than me. You should make me your
-                    campaign manager. I was born for politics. I have great hair
-                    and I love lying. Captain? The kids want to know where
-                    Paulie the Pigeon is. I told them he got sucked up into an
-                    airplane engine, is that all right?
-                </AboutDesc>
             </About>
-            <Contact offset={4}>
+            <Contact offset={2}>
                 <Inner>
                     <Title>Get in touch</Title>
                     <ContactText>

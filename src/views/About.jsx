@@ -10,7 +10,7 @@ import SVG from '../components/SVG';
 const About = ({ children, offset }) => (
     <>
         <Divider
-            bg="#23262b"
+            bg="linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%)"
             clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)"
             speed={0.2}
             offset={offset}
