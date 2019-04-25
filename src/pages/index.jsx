@@ -111,9 +111,10 @@ const Index = () => (
                 <AboutHero>
                     <Avatar src={avatar} alt="John Doe" />
                     <AboutSub>
-                        The English language can not fully capture the depth and
-                        complexity of my thoughts. So I'm incorporating Emoji
-                        into my speech to better express myself. Winky face.
+                        My name is Cipriano Freitas and I currently live in
+                        Amsterdam helping people book their travels at
+                        Booking.com. I'm a developer by day and a musician by
+                        night. Sometimes I also write things.
                     </AboutSub>
                 </AboutHero>
                 <AboutDesc>
