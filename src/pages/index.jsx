@@ -61,10 +61,10 @@ const Index = () => (
                 <BigTitle>
                     Hi, <br /> I'm Cipri.
                 </BigTitle>
-                <Subtitle>
+                {/* <Subtitle>
                     I'm creating noice web experiences for the next generation
                     of consumer-facing companies.
-                </Subtitle>
+                </Subtitle> */}
             </Hero>
             {/* <Projects offset={1}>
                 <Title>Stuff I Wrote</Title>
@@ -109,8 +109,8 @@ const Index = () => (
                     <AboutSub>
                         <p>
                             My name is Cipriano Freitas and I currently live in
-                            Amsterdam helping people book their travels at{' '}
-                            <a href="https://booking.com">Booking.com</a>.
+                            Amsterdam helping people book their travels at
+                            Booking.com.
                         </p>
                         <p>I'm a developer by day and a musician by night.</p>{' '}
                         <p>Sometimes I also write things.</p>
