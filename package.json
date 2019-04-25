@@ -1,74 +1,59 @@
 {
-  "name": "gatsby-starter-blog",
-  "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "name": "gatsby-new-design",
+  "description": "Playful & Colorful One-Page website with Parallax effect powered by react-spring, TailwindCSS.",
+  "version": "3.0.0",
+  "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
+  "license": "MIT",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.3.3",
-    "gatsby-image": "^2.0.35",
-    "gatsby-plugin-feed": "^2.1.0",
+    "gatsby": "^2.3.25",
+    "gatsby-image": "^2.0.39",
     "gatsby-plugin-google-analytics": "^2.0.18",
-    "gatsby-plugin-manifest": "^2.0.25",
-    "gatsby-plugin-netlify": "^2.0.13",
-    "gatsby-plugin-netlify-cms": "^3.0.17",
+    "gatsby-plugin-manifest": "^2.0.29",
+    "gatsby-plugin-netlify": "^2.0.14",
     "gatsby-plugin-offline": "^2.0.25",
-    "gatsby-plugin-react-helmet": "^3.0.11",
-    "gatsby-plugin-remove-serviceworker": "^1.0.0",
-    "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-plugin-styled-components": "^3.0.7",
-    "gatsby-remark-copy-linked-files": "^2.0.11",
-    "gatsby-remark-images": "^2.0.6",
-    "gatsby-remark-prismjs": "^3.2.6",
-    "gatsby-remark-responsive-iframe": "^2.1.1",
-    "gatsby-remark-smartypants": "^2.0.9",
-    "gatsby-source-filesystem": "^2.0.28",
-    "gatsby-transformer-remark": "^2.3.8",
-    "gatsby-transformer-sharp": "^2.1.17",
-    "netlify-cms": "^2.9.0",
-    "prismjs": "^1.16.0",
+    "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-transformer-sharp": "^2.1.18",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "react-typography": "^0.16.19",
+    "react-spring": "^8.0.19",
     "styled-components": "^4.2.0",
-    "styled-normalize": "^8.0.6",
-    "typeface-lora": "^0.0.72",
+    "tailwind.macro": "^0.5.10",
+    "tailwindcss": "^0.7.4",
+    "typeface-lora": "0.0.72",
     "typeface-open-sans": "^0.0.54"
   },
+  "keywords": [],
+  "scripts": {
+    "dev": "gatsby develop -o",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
+    "lint:ci": "yarn lint --format junit -o results/eslint/result.xml"
+  },
   "devDependencies": {
-    "babel-preset-gatsby": "^0.1.11",
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.16.4"
+    "prettier": "^1.17.0"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "https://github.com/LekoArts/gatsby-starter-portfolio-cara",
+    "type": "git"
   },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "lint": "eslint --fix src/**/*.jsx",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  }
+  "bugs": {
+    "url": "https://github.com/LekoArts/gatsby-starter-portfolio-cara/issues"
+  },
+  "homepage": "https://cara.lekoarts.de"
 }

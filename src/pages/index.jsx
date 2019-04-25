@@ -1,204 +1,150 @@
-/* eslint-disable react/no-danger */
-import React from 'react';
-import { Link, graphql } from 'gatsby';
+import React from "react";
+import styled from "styled-components";
+import tw from "tailwind.macro";
+import { Parallax } from "react-spring/renderprops-addons.cjs";
 
-import styled from 'styled-components';
-import Bio from '../components/bio';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+// Components
+import Layout from "../components/Layout";
+import ProjectCard from "../components/ProjectCard";
 
-const SocialItem = styled.li`
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+// Elements
+import Inner from "../elements/Inner";
+import { Title, BigTitle, Subtitle } from "../elements/Titles";
 
-    @media (max-width: 749px) {
-        display: inline;
-    }
+// Views
+import Hero from "../views/Hero";
+import Projects from "../views/Projects";
+import About from "../views/About";
+import Contact from "../views/Contact";
+
+import avatar from "../images/avatar.jpg";
+
+const ProjectsWrapper = styled.div`
+  ${tw`flex flex-wrap justify-between mt-8`};
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 1200px) {
+    grid-gap: 3rem;
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
 `;
 
-const Grid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-    & > * {
-        padding: 5vw 10vw;
-    }
+const AboutHero = styled.div`
+  ${tw`flex flex-col lg:flex-row items-center mt-8`};
 `;
-const MyDescription = () => {
-    return (
-        <div>
-            <p>
-                My name is <strong>Cipriano Freitas</strong> and I currently
-                live in Amsterdam helping people book their travels at{' '}
-                <strong>Booking.com</strong>.
-            </p>
 
-            <p>
-                I'm a developer by day and a musician by night. Sometimes I also
-                write things.
-            </p>
-            <br />
-        </div>
-    );
-};
-
-const BlogIndex = ({ data, location }) => {
-    const { title: siteTitle, social } = data.site.siteMetadata;
-    const posts = data.allMarkdownRemark.edges;
-
-    return (
-        <Layout location={location} title={siteTitle}>
-            <SEO
-                title="Home"
-                keywords={['blog', 'gatsby', 'javascript', 'react']}
-            />
-            <Grid>
-                <div>
-                    <header>
-                        <h1
-                            css={`
-                                font-weight: bold;
-                                margin-top: 0;
-                                margin-bottom: 2rem;
-                                font-size: 5rem;
-                                color: ${props => props.theme.action};
-                            `}
-                        >
-                            {siteTitle}
-                        </h1>
-                    </header>
-                    <MyDescription />
-                    <ul
-                        css="
-                            list-style: none;
-                            padding: 0;
-                            margin-bottom:4rem;
-                        "
-                    >
-                        <SocialItem>
-                            <a href="//music.cipri.codes">
-                                <span aria-hidden="true">🎧</span> Music
-                            </a>
-                        </SocialItem>
-                        <SocialItem>
-                            <a href={`https://github.com/${social.handle}`}>
-                                <span aria-hidden="true">🐙</span> Github
-                            </a>
-                        </SocialItem>
-                        <SocialItem>
-                            <a href={`https://twitter.com/${social.handle}`}>
-                                <span aria-hidden="true">🐦</span> Twitter
-                            </a>
-                        </SocialItem>
-                        <SocialItem>
-                            <a href="https://til.cipri.codes">
-                                <span aria-hidden="true">🧠</span> TIL
-                            </a>
-                        </SocialItem>
-                    </ul>
-                </div>
-                <main
-                    css={`
-                        background-color: ${props => props.theme.background};
-                        background-image: url("data:image/svg+xml,%3Csvg width='84' height='84' viewBox='0 0 84 84' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23263238' fill-opacity='0.07'%3E%3Cpath d='M84 23c-4.417 0-8-3.584-8-7.998V8h-7.002C64.58 8 61 4.42 61 0H23c0 4.417-3.584 8-7.998 8H8v7.002C8 19.42 4.42 23 0 23v38c4.417 0 8 3.584 8 7.998V76h7.002C19.42 76 23 79.58 23 84h38c0-4.417 3.584-8 7.998-8H76v-7.002C76 64.58 79.58 61 84 61V23zM59.05 83H43V66.95c5.054-.5 9-4.764 9-9.948V52h5.002c5.18 0 9.446-3.947 9.95-9H83v16.05c-5.054.5-9 4.764-9 9.948V74h-5.002c-5.18 0-9.446 3.947-9.95 9zm-34.1 0H41V66.95c-5.053-.502-9-4.768-9-9.948V52h-5.002c-5.184 0-9.447-3.946-9.95-9H1v16.05c5.053.502 9 4.768 9 9.948V74h5.002c5.184 0 9.447 3.946 9.95 9zm0-82H41v16.05c-5.054.5-9 4.764-9 9.948V32h-5.002c-5.18 0-9.446 3.947-9.95 9H1V24.95c5.054-.5 9-4.764 9-9.948V10h5.002c5.18 0 9.446-3.947 9.95-9zm34.1 0H43v16.05c5.053.502 9 4.768 9 9.948V32h5.002c5.184 0 9.447 3.946 9.95 9H83V24.95c-5.053-.502-9-4.768-9-9.948V10h-5.002c-5.184 0-9.447-3.946-9.95-9zM50 50v7.002C50 61.42 46.42 65 42 65c-4.417 0-8-3.584-8-7.998V50h-7.002C22.58 50 19 46.42 19 42c0-4.417 3.584-8 7.998-8H34v-7.002C34 22.58 37.58 19 42 19c4.417 0 8 3.584 8 7.998V34h7.002C61.42 34 65 37.58 65 42c0 4.417-3.584 8-7.998 8H50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-                        min-height: calc(100vh - 40px);
-                        position: relative;
-                    `}
-                >
-                    <h2
-                        css={`
-                            font-weight: bold;
-                            margin-top: 0;
-                            font-size: 2rem;
-                            color: ${props => props.theme.action};
-                        `}
-                    >
-                        <span aria-hidden="true">📝</span>
-                        {" Stuff I've written"}
-                    </h2>
-                    {posts.map(({ node }) => {
-                        const title =
-                            node.frontmatter.title || node.fields.slug;
-                        return (
-                            <Link
-                                key={node.fields.slug}
-                                to={node.fields.slug}
-                                css={`
-                                    display: block;
-                                    border-left: 5px solid
-                                        ${props => props.theme.action};
-                                    transition: border-width 0.1s ease-in-out;
-                                    padding-left: 1rem;
-                                    margin-bottom: 2rem;
-                                    &:hover {
-                                        border-left: 15px solid
-                                            ${props => props.theme.action};
-                                        border-bottom: none;
-                                        }
-                                    }
-                                `}
-                            >
-                                <h3 css="margin-bottom:0.5rem">{title}</h3>
-                                <small
-                                    css={`
-                                        color: ${props =>
-                                            props.theme.foreground};
-                                    `}
-                                >
-                                    {node.frontmatter.date}
-                                </small>
-                                <p
-                                    css={`
-                                        color: ${props =>
-                                            props.theme.foreground};
-                                    `}
-                                    dangerouslySetInnerHTML={{
-                                        __html:
-                                            node.frontmatter.description ||
-                                            node.excerpt,
-                                    }}
-                                />
-                            </Link>
-                        );
-                    })}
-                    <footer css="position: absolute; bottom: 2rem;">
-                        © {new Date().getFullYear()}, Built in Amsterdam 🚲
-                    </footer>
-                </main>
-            </Grid>
-        </Layout>
-    );
-};
-
-export default BlogIndex;
-
-export const pageQuery = graphql`
-    query {
-        site {
-            siteMetadata {
-                title
-                social {
-                    handle
-                }
-            }
-        }
-        allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: { published: { eq: true } } }
-        ) {
-            edges {
-                node {
-                    excerpt
-                    fields {
-                        slug
-                    }
-                    frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
-                        title
-                    }
-                }
-            }
-        }
-    }
+const Avatar = styled.img`
+  ${tw`rounded-full w-32 xl:w-48 shadow-lg h-auto`};
 `;
+
+const AboutSub = styled.span`
+  ${tw`text-white pt-12 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
+`;
+
+const AboutDesc = styled.p`
+  ${tw`text-grey-light text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12 text-justify`};
+`;
+
+const ContactText = styled.p`
+  ${tw`text-grey-light font-sans text-xl md:text-2xl lg:text-3xl`};
+`;
+
+const Footer = styled.footer`
+  ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
+`;
+
+const Index = () => (
+  <>
+    <Layout />
+    <Parallax pages={5}>
+      <Hero offset={0}>
+        <BigTitle>
+          Hi, <br /> I'm Cipri.
+        </BigTitle>
+        <Subtitle>
+          I'm creating noice web experiences for the next generation of
+          consumer-facing companies.
+        </Subtitle>
+      </Hero>
+      <Projects offset={1}>
+        <Title>Stuff I Wrote</Title>
+        <ProjectsWrapper>
+          <ProjectCard
+            title="Freiheit"
+            link="https://www.behance.net/gallery/58937147/Freiheit"
+            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
+          >
+            This project is my entry to Adobe's #ChallengeYourPerspective
+            contest.
+          </ProjectCard>
+          <ProjectCard
+            title="Harry Potter"
+            link="https://www.behance.net/gallery/52915793/Harry-Potter"
+            bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
+          >
+            I entered the DOCMA 2017 award with this Harry Potter inspired
+            image.
+          </ProjectCard>
+          <ProjectCard
+            title="Tomb Raider"
+            link="https://www.behance.net/gallery/43907099/Tomb-Raider"
+            bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
+          >
+            Recreation of a Tomb Raider Wallpaper (Fan Art)
+          </ProjectCard>
+          <ProjectCard
+            title="Eagle"
+            link="https://www.behance.net/gallery/38068151/Eagle"
+            bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
+          >
+            A fantasy image manipulation relocating the habitat of wild animals.
+          </ProjectCard>
+        </ProjectsWrapper>
+      </Projects>
+      <About offset={3}>
+        <Title>About</Title>
+        <AboutHero>
+          <Avatar src={avatar} alt="John Doe" />
+          <AboutSub>
+            The English language can not fully capture the depth and complexity
+            of my thoughts. So I'm incorporating Emoji into my speech to better
+            express myself. Winky face.
+          </AboutSub>
+        </AboutHero>
+        <AboutDesc>
+          You know the way you feel when you see a picture of two otters holding
+          hands? That's how you're gonna feel every day. My mother cried the day
+          I was born because she knew she’d never be prettier than me. You
+          should make me your campaign manager. I was born for politics. I have
+          great hair and I love lying. Captain? The kids want to know where
+          Paulie the Pigeon is. I told them he got sucked up into an airplane
+          engine, is that all right?
+        </AboutDesc>
+      </About>
+      <Contact offset={4}>
+        <Inner>
+          <Title>Get in touch</Title>
+          <ContactText>
+            Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or find me on
+            other platforms:{" "}
+            <a href="https://dribbble.com/LekoArts">Dribbble</a> &{" "}
+            <a href="https://www.instagram.com/lekoarts.de/">Instagram</a>
+          </ContactText>
+        </Inner>
+        <Footer>
+          &copy; 2019 by Gatsby Starter Portfolio Cara.{" "}
+          <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">
+            Github Repository
+          </a>
+          . Made by <a href="https://www.lekoarts.de">LekoArts</a>.
+        </Footer>
+      </Contact>
+    </Parallax>
+  </>
+);
+
+export default Index;
