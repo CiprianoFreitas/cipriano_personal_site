@@ -5,6 +5,7 @@ import { Parallax } from 'react-spring/renderprops-addons.cjs';
 
 // Components
 import Layout from '../components/layout';
+import ProjectCard from '../components/ProjectCard';
 
 // Elements
 import Inner from '../elements/Inner';
@@ -14,6 +15,21 @@ import { Title, BigTitle } from '../elements/Titles';
 import Hero from '../views/Hero';
 import About from '../views/About';
 import Contact from '../views/Contact';
+import Projects from '../views/Projects';
+
+const ProjectsWrapper = styled.div`
+    ${tw`flex flex-wrap justify-between mt-8`};
+    display: grid;
+    grid-gap: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 1200px) {
+        grid-gap: 3rem;
+    }
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    }
+`;
 
 const ColouredLink = styled.a`
     ${tw`px-2 py-1 text-white underline`}
@@ -52,7 +68,7 @@ const Index = ({ data }) => {
     return (
         <>
             <Layout />
-            <Parallax pages={2}>
+            <Parallax pages={4}>
                 <Hero offset={0}>
                     <BigTitle>
                         Hi, <br /> I'm Cipri. 👋🏻
@@ -83,10 +99,32 @@ const Index = ({ data }) => {
                         </AboutSub>
                     </AboutHero>
                 </Hero>
-                {/* <About offset={1}>
-                <Title>About</Title>
-            </About> */}
-                <Contact offset={1}>
+                <Projects offset={1}>
+                    <Title>Stuff I've Written</Title>
+                    <ProjectsWrapper>
+                        {posts.map(({ node }) => {
+                            const title =
+                                node.frontmatter.title || node.fields.slug;
+                            return (
+                                <ProjectCard
+                                    title={title}
+                                    link=""
+                                    bg="linear-gradient(140deg, rgba(22,23,25,1) 0%, rgba(42,46,48,1) 100%)"
+                                >
+                                    <p
+                                        // eslint-disable-next-line react/no-danger
+                                        dangerouslySetInnerHTML={{
+                                            __html:
+                                                node.frontmatter.description ||
+                                                node.excerpt,
+                                        }}
+                                    />
+                                </ProjectCard>
+                            );
+                        })}
+                    </ProjectsWrapper>
+                </Projects>
+                <Contact offset={3}>
                     <Inner>
                         <Title>Get in touch</Title>
                         <ContactText>
