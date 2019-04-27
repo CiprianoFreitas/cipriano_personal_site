@@ -5,15 +5,13 @@ import { Parallax } from 'react-spring/renderprops-addons.cjs';
 
 // Components
 import Layout from '../components/Layout';
-import ProjectCard from '../components/ProjectCard';
 
 // Elements
 import Inner from '../elements/Inner';
-import { Title, BigTitle, Subtitle } from '../elements/Titles';
+import { Title, BigTitle } from '../elements/Titles';
 
 // Views
 import Hero from '../views/Hero';
-import Projects from '../views/Projects';
 import About from '../views/About';
 import Contact from '../views/Contact';
 
@@ -22,23 +20,19 @@ const ColouredLink = styled.a`
 `;
 
 const BlueLink = styled(ColouredLink)`
-    ${tw`bg-blue-dark`}
+    ${tw`bg-blue-dark hover:bg-blue-darker`}
 `;
 
 const RedLink = styled(ColouredLink)`
-    ${tw`bg-red`}
+    ${tw`bg-red hover:bg-red-light`}
 `;
 
 const YellowLink = styled(ColouredLink)`
-    ${tw`bg-yellow`}
+    ${tw`bg-yellow hover:bg-yellow-dark`}
 `;
 
 const AboutHero = styled.div`
     ${tw`flex flex-col lg:flex-row items-center mt-8`};
-`;
-
-const Avatar = styled.img`
-    ${tw`rounded-full w-32 xl:w-48 shadow-lg h-auto`};
 `;
 
 const AboutSub = styled.span`
@@ -85,47 +79,7 @@ const Index = () => (
                         <p>Sometimes I also write things.</p>
                     </AboutSub>
                 </AboutHero>
-                {/* <Subtitle>
-                    I'm creating noice web experiences for the next generation
-                    of consumer-facing companies.
-                </Subtitle> */}
             </Hero>
-            {/* <Projects offset={1}>
-                <Title>Stuff I Wrote</Title>
-                <ProjectsWrapper>
-                    <ProjectCard
-                        title="Freiheit"
-                        link="https://www.behance.net/gallery/58937147/Freiheit"
-                        bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
-                    >
-                        This project is my entry to Adobe's
-                        #ChallengeYourPerspective contest.
-                    </ProjectCard>
-                    <ProjectCard
-                        title="Harry Potter"
-                        link="https://www.behance.net/gallery/52915793/Harry-Potter"
-                        bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
-                    >
-                        I entered the DOCMA 2017 award with this Harry Potter
-                        inspired image.
-                    </ProjectCard>
-                    <ProjectCard
-                        title="Tomb Raider"
-                        link="https://www.behance.net/gallery/43907099/Tomb-Raider"
-                        bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
-                    >
-                        Recreation of a Tomb Raider Wallpaper (Fan Art)
-                    </ProjectCard>
-                    <ProjectCard
-                        title="Eagle"
-                        link="https://www.behance.net/gallery/38068151/Eagle"
-                        bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
-                    >
-                        A fantasy image manipulation relocating the habitat of
-                        wild animals.
-                    </ProjectCard>
-                </ProjectsWrapper>
-            </Projects> */}
             <About offset={1}>
                 <Title>About</Title>
             </About>
