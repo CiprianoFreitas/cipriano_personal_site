@@ -42,7 +42,7 @@ const Avatar = styled.img`
 `;
 
 const AboutSub = styled.span`
-    ${tw`text-white pt-12 lg:pt-0 lg:pl-12 text-2xl font-sans lg:text-3xl xl:text-4xl`};
+    ${tw`text-white pt-12 lg:pt-0 text-2xl font-sans`};
 `;
 
 const ContactText = styled.p`
@@ -59,8 +59,19 @@ const Index = () => (
         <Parallax pages={3}>
             <Hero offset={0}>
                 <BigTitle>
-                    Hi, <br /> I'm Cipri.
+                    Hi, <br /> I'm Cipri. 👋🏻
                 </BigTitle>
+                <AboutHero>
+                    <AboutSub>
+                        <p>
+                            My name is Cipriano Freitas and I currently live in
+                            Amsterdam helping people book their travels at
+                            Booking.com.
+                        </p>
+                        <p>I'm a developer by day and a musician by night.</p>{' '}
+                        <p>Sometimes I also write things.</p>
+                    </AboutSub>
+                </AboutHero>
                 {/* <Subtitle>
                     I'm creating noice web experiences for the next generation
                     of consumer-facing companies.
@@ -104,18 +115,6 @@ const Index = () => (
             </Projects> */}
             <About offset={1}>
                 <Title>About</Title>
-                <AboutHero>
-                    <Avatar src={avatar} alt="John Doe" />
-                    <AboutSub>
-                        <p>
-                            My name is Cipriano Freitas and I currently live in
-                            Amsterdam helping people book their travels at
-                            Booking.com.
-                        </p>
-                        <p>I'm a developer by day and a musician by night.</p>{' '}
-                        <p>Sometimes I also write things.</p>
-                    </AboutSub>
-                </AboutHero>
             </About>
             <Contact offset={2}>
                 <Inner>
