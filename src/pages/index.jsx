@@ -18,7 +18,7 @@ import About from '../views/About';
 import Contact from '../views/Contact';
 
 const ColouredLink = styled.a`
-    ${tw`px-2 py-1 text-white`}
+    ${tw`px-2 py-1 text-white underline`}
 `;
 
 const BlueLink = styled(ColouredLink)`
