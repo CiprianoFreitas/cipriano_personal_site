@@ -4,8 +4,8 @@ import { Link, graphql } from 'gatsby';
 
 import styled from 'styled-components';
 import Bio from '../components/bio';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 const SocialItem = styled.li`
     margin-right: 1rem;
