@@ -131,7 +131,7 @@ const Index = () => (
                         </a>
                     </ContactText>
                 </Inner>
-                <Footer>&copy; 2019 by Cipriano Freitas in Amsterdam</Footer>
+                <Footer>&copy; 2019 by Cipriano Freitas in Amsterdam 🚲</Footer>
             </Contact>
         </Parallax>
     </>
