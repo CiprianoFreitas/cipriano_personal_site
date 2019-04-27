@@ -17,20 +17,20 @@ import Projects from '../views/Projects';
 import About from '../views/About';
 import Contact from '../views/Contact';
 
-import avatar from '../images/avatar.jpg';
+const ColouredLink = styled.a`
+    ${tw`px-2 py-1 text-white`}
+`;
 
-const ProjectsWrapper = styled.div`
-    ${tw`flex flex-wrap justify-between mt-8`};
-    display: grid;
-    grid-gap: 4rem;
-    grid-template-columns: repeat(2, 1fr);
-    @media (max-width: 1200px) {
-        grid-gap: 3rem;
-    }
-    @media (max-width: 900px) {
-        grid-template-columns: 1fr;
-        grid-gap: 2rem;
-    }
+const BlueLink = styled(ColouredLink)`
+    ${tw`bg-blue-dark`}
+`;
+
+const RedLink = styled(ColouredLink)`
+    ${tw`bg-red`}
+`;
+
+const YellowLink = styled(ColouredLink)`
+    ${tw`bg-yellow`}
 `;
 
 const AboutHero = styled.div`
@@ -65,10 +65,23 @@ const Index = () => (
                     <AboutSub>
                         <p>
                             My name is Cipriano Freitas and I currently live in
-                            Amsterdam helping people book their travels at
-                            Booking.com.
+                            Amsterdam helping people book their travels at{' '}
+                            <BlueLink href="https://booking.com">
+                                Booking.com
+                            </BlueLink>
+                            .
                         </p>
-                        <p>I'm a developer by day and a musician by night.</p>{' '}
+                        <p>
+                            I'm a{' '}
+                            <RedLink href="https://github.com/CiprianoFreitas">
+                                developer
+                            </RedLink>{' '}
+                            by day and a{' '}
+                            <YellowLink href="https://music.cipri.codes">
+                                musician
+                            </YellowLink>{' '}
+                            by night.
+                        </p>{' '}
                         <p>Sometimes I also write things.</p>
                     </AboutSub>
                 </AboutHero>
