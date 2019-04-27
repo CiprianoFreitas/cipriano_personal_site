@@ -50,7 +50,7 @@ const Footer = styled.footer`
 const Index = () => (
     <>
         <Layout />
-        <Parallax pages={3}>
+        <Parallax pages={2}>
             <Hero offset={0}>
                 <BigTitle>
                     Hi, <br /> I'm Cipri. 👋🏻
@@ -80,10 +80,10 @@ const Index = () => (
                     </AboutSub>
                 </AboutHero>
             </Hero>
-            <About offset={1}>
+            {/* <About offset={1}>
                 <Title>About</Title>
-            </About>
-            <Contact offset={2}>
+            </About> */}
+            <Contact offset={1}>
                 <Inner>
                     <Title>Get in touch</Title>
                     <ContactText>
