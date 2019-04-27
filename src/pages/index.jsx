@@ -4,7 +4,7 @@ import tw from 'tailwind.macro';
 import { Parallax } from 'react-spring/renderprops-addons.cjs';
 
 // Components
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 
 // Elements
 import Inner from '../elements/Inner';
