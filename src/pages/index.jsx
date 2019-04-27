@@ -13,7 +13,6 @@ import { Title, BigTitle } from '../elements/Titles';
 
 // Views
 import Hero from '../views/Hero';
-import About from '../views/About';
 import Contact from '../views/Contact';
 import Projects from '../views/Projects';
 
