@@ -17,9 +17,9 @@ module.exports = {
     userTwitter: '@ciprianofreitas', // Twitter Username
     ogSiteName: 'Cipri', // Facebook Site Name
     ogLanguage: 'en_US', // Facebook Language
-    googleAnalyticsID: 'UA-47519312-5',
+    googleAnalyticsID: 'UA-137563238-1',
 
     // Manifest and Progress color
-    themeColor: tailwind.colors.orange,
-    backgroundColor: tailwind.colors.blue,
+    themeColor: tailwind.colors['blue-grey'],
+    backgroundColor: tailwind.colors['blue-grey'],
 };
