@@ -47,61 +47,88 @@ const Footer = styled.footer`
     ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
 `;
 
-const Index = () => (
-    <>
-        <Layout />
-        <Parallax pages={2}>
-            <Hero offset={0}>
-                <BigTitle>
-                    Hi, <br /> I'm Cipri. 👋🏻
-                </BigTitle>
-                <AboutHero>
-                    <AboutSub>
-                        <p>
-                            My name is Cipriano Freitas and I currently live in
-                            Amsterdam helping people book their travels at{' '}
-                            <BlueLink href="https://booking.com">
-                                Booking.com
-                            </BlueLink>
-                            .
-                        </p>
-                        <p>
-                            I'm a{' '}
-                            <RedLink href="https://github.com/CiprianoFreitas">
-                                developer
-                            </RedLink>{' '}
-                            by day and a{' '}
-                            <YellowLink href="https://music.cipri.codes">
-                                musician
-                            </YellowLink>{' '}
-                            by night.
-                        </p>{' '}
-                        <p>Sometimes I also write things.</p>
-                    </AboutSub>
-                </AboutHero>
-            </Hero>
-            {/* <About offset={1}>
+const Index = ({ data }) => {
+    const posts = data.allMarkdownRemark.edges;
+    return (
+        <>
+            <Layout />
+            <Parallax pages={2}>
+                <Hero offset={0}>
+                    <BigTitle>
+                        Hi, <br /> I'm Cipri. 👋🏻
+                    </BigTitle>
+                    <AboutHero>
+                        <AboutSub>
+                            <p>
+                                My name is Cipriano Freitas and I currently live
+                                in Amsterdam helping people book their travels
+                                at{' '}
+                                <BlueLink href="https://booking.com">
+                                    Booking.com
+                                </BlueLink>
+                                .
+                            </p>
+                            <p>
+                                I'm a{' '}
+                                <RedLink href="https://github.com/CiprianoFreitas">
+                                    developer
+                                </RedLink>{' '}
+                                by day and a{' '}
+                                <YellowLink href="https://music.cipri.codes">
+                                    musician
+                                </YellowLink>{' '}
+                                by night.
+                            </p>{' '}
+                            <p>Sometimes I also write things.</p>
+                        </AboutSub>
+                    </AboutHero>
+                </Hero>
+                {/* <About offset={1}>
                 <Title>About</Title>
             </About> */}
-            <Contact offset={1}>
-                <Inner>
-                    <Title>Get in touch</Title>
-                    <ContactText>
-                        Say <a href="mailto:cipriano.freitas@outlook.com">Hi</a>{' '}
-                        or find me on other platforms:{' '}
-                        <a href="https://twitter.com/CiprianoFreitas">
-                            Twitter
-                        </a>{' '}
-                        &{' '}
-                        <a href="https://www.linkedin.com/in/ciprianofreitas/">
-                            LinkedIn
-                        </a>
-                    </ContactText>
-                </Inner>
-                <Footer>&copy; 2019 by Cipriano Freitas in Amsterdam 🚲</Footer>
-            </Contact>
-        </Parallax>
-    </>
-);
-
+                <Contact offset={1}>
+                    <Inner>
+                        <Title>Get in touch</Title>
+                        <ContactText>
+                            Say{' '}
+                            <a href="mailto:cipriano.freitas@outlook.com">Hi</a>{' '}
+                            or find me on other platforms:{' '}
+                            <a href="https://twitter.com/CiprianoFreitas">
+                                Twitter
+                            </a>{' '}
+                            &{' '}
+                            <a href="https://www.linkedin.com/in/ciprianofreitas/">
+                                LinkedIn
+                            </a>
+                        </ContactText>
+                    </Inner>
+                    <Footer>
+                        &copy; 2019 by Cipriano Freitas in Amsterdam 🚲
+                    </Footer>
+                </Contact>
+            </Parallax>
+        </>
+    );
+};
+export const pageQuery = graphql`
+    query {
+        allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: { frontmatter: { published: { eq: true } } }
+        ) {
+            edges {
+                node {
+                    excerpt
+                    # fields {
+                    #     slug
+                    # }
+                    frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
+                        title
+                    }
+                }
+            }
+        }
+    }
+`;
 export default Index;

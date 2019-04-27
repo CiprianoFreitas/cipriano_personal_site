@@ -19,11 +19,19 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/content/blog`,
+                name: `blog`,
+            },
+        },
+        {
             resolve: 'gatsby-plugin-google-analytics',
             options: {
                 trackingId: config.googleAnalyticsID,
             },
         },
+        'gatsby-transformer-remark',
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         {
