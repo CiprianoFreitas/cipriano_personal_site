@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import Layout from '../components/layout';
-import Footer from '../components/Footer';
 import Inner from '../elements/Inner';
 import { Title } from '../elements/Titles';
+import { graphql } from 'gatsby';
 
 const Article = styled.article`
     ${tw`text-white relative pb-32 font-sans max-w-md mx-auto`};
