@@ -5,7 +5,7 @@ import { Parallax } from 'react-spring/renderprops-addons.cjs';
 
 // Components
 import Layout from '../components/layout';
-import ProjectCard from '../components/ProjectCard';
+import BlogPostCard from '../components/BlogPostCard';
 import Footer from '../components/Footer';
 
 // Elements
@@ -102,7 +102,7 @@ const Index = ({ data }) => {
                             const title =
                                 node.frontmatter.title || node.fields.slug;
                             return (
-                                <ProjectCard
+                                <BlogPostCard
                                     title={title}
                                     link={node.fields.slug}
                                     bg="linear-gradient(140deg, rgba(22,23,25,1) 0%, rgba(42,46,48,1) 100%)"
@@ -115,7 +115,7 @@ const Index = ({ data }) => {
                                                 node.excerpt,
                                         }}
                                     />
-                                </ProjectCard>
+                                </BlogPostCard>
                             );
                         })}
                     </ProjectsWrapper>

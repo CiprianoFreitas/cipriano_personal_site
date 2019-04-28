@@ -20,20 +20,20 @@ const Text = styled.div`
 `;
 
 const Title = styled.div`
-    ${tw`text-white uppercase text-2xl md:text-3xl xl:text-4xl tracking-wide font-serif font-bold pt-8`};
+    ${tw`text-white text-2xl md:text-3xl tracking-wide font-serif font-bold pt-8`};
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 `;
 
-const ProjectCard = ({ title, link, children, bg }) => (
+const BlogPostCard = ({ title, link, children, bg }) => (
     <Wrapper to={link} target="_blank" rel="noopener noreferrer" bg={bg}>
         <Title>{title}</Title>
         <Text>{children}</Text>
     </Wrapper>
 );
 
-export default ProjectCard;
+export default BlogPostCard;
 
-ProjectCard.propTypes = {
+BlogPostCard.propTypes = {
     title: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
