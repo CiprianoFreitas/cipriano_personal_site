@@ -6,6 +6,7 @@ import { Parallax } from 'react-spring/renderprops-addons.cjs';
 // Components
 import Layout from '../components/layout';
 import ProjectCard from '../components/ProjectCard';
+import Footer from '../components/Footer';
 
 // Elements
 import Inner from '../elements/Inner';
@@ -58,10 +59,6 @@ const ContactText = styled.p`
     ${tw`text-grey-light font-sans text-xl md:text-2xl lg:text-3xl`};
 `;
 
-const Footer = styled.footer`
-    ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
-`;
-
 const Index = ({ data }) => {
     const posts = data.allMarkdownRemark.edges;
     return (
@@ -107,7 +104,7 @@ const Index = ({ data }) => {
                             return (
                                 <ProjectCard
                                     title={title}
-                                    link=""
+                                    link={node.fields.slug}
                                     bg="linear-gradient(140deg, rgba(22,23,25,1) 0%, rgba(42,46,48,1) 100%)"
                                 >
                                     <p
@@ -139,9 +136,7 @@ const Index = ({ data }) => {
                             </a>
                         </ContactText>
                     </Inner>
-                    <Footer>
-                        &copy; 2019 by Cipriano Freitas in Amsterdam 🚲
-                    </Footer>
+                    <Footer />
                 </Contact>
             </Parallax>
         </>
@@ -156,9 +151,9 @@ export const pageQuery = graphql`
             edges {
                 node {
                     excerpt
-                    # fields {
-                    #     slug
-                    # }
+                    fields {
+                        slug
+                    }
                     frontmatter {
                         date(formatString: "MMMM DD, YYYY")
                         title

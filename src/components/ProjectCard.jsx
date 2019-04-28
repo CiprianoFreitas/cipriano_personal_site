@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+import { Link } from 'gatsby';
 
-const Wrapper = styled.a`
+const Wrapper = styled(Link)`
     width: 100%;
     ${tw`shadow-lg relative no-underline rounded-sm px-8 pb-4 text-white`};
     background: ${props => props.bg};
@@ -24,7 +25,7 @@ const Title = styled.div`
 `;
 
 const ProjectCard = ({ title, link, children, bg }) => (
-    <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
+    <Wrapper to={link} target="_blank" rel="noopener noreferrer" bg={bg}>
         <Title>{title}</Title>
         <Text>{children}</Text>
     </Wrapper>
