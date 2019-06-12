@@ -50,13 +50,13 @@ const upDownWideAnimation = css`
 
 export const UpDown = styled.div`
     animation: ${upDownAnimation};
-    z-index:-1;
+    z-index: -1;
     ${tw`pin absolute`};
 `;
 
 export const UpDownWide = styled.div`
     animation: ${upDownWideAnimation};
-    z-index:-1;
+    z-index: -1;
     ${tw`pin absolute`};
 `;
 

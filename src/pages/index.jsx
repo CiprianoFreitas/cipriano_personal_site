@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 // Components
 import Layout from '../components/layout';
@@ -12,7 +12,6 @@ import { BigTitle } from '../elements/Titles';
 
 // Views
 import Background from '../elements/Background';
-
 
 const CustomLink = styled.a`
     ${tw`underline`}
@@ -25,7 +24,6 @@ const AboutHero = styled.div`
 const AboutSub = styled.span`
     ${tw`text-white pt-12 lg:pt-0 text-2xl font-sans`};
 `;
-
 
 const Index = ({ data }) => {
     const posts = data.allMarkdownRemark.edges;
