@@ -17,10 +17,6 @@ const CustomLink = styled.a`
     ${tw`underline`}
 `;
 
-const AboutHero = styled.div`
-    ${tw`flex flex-col lg:flex-row items-center mt-8 z-50`};
-`;
-
 const AboutSub = styled.span`
     ${tw`text-white pt-12 lg:pt-0 text-2xl font-sans`};
 `;
@@ -35,30 +31,28 @@ const Index = ({ data }) => {
                 <BigTitle>
                     Hi, <br /> I'm Cipri. 👋🏻
                 </BigTitle>
-                <AboutHero>
-                    <AboutSub>
-                        <p>
-                            My name is Cipriano Freitas and I currently live in
-                            Amsterdam helping people book their travels at{' '}
-                            <CustomLink href="https://booking.com">
-                                Booking.com
-                            </CustomLink>
-                            .
-                        </p>
-                        <p>
-                            I'm a{' '}
-                            <CustomLink href="https://github.com/CiprianoFreitas">
-                                developer
-                            </CustomLink>{' '}
-                            by day and a{' '}
-                            <CustomLink href="https://music.cipri.codes">
-                                musician
-                            </CustomLink>{' '}
-                            by night.
-                        </p>{' '}
-                        <p>Sometimes I also write things.</p>
-                    </AboutSub>
-                </AboutHero>
+                <AboutSub>
+                    <p>
+                        My name is Cipriano Freitas and I currently live in
+                        Amsterdam helping people book their travels at{' '}
+                        <CustomLink href="https://booking.com">
+                            Booking.com
+                        </CustomLink>
+                        .
+                    </p>
+                    <p>
+                        I'm a{' '}
+                        <CustomLink href="https://github.com/CiprianoFreitas">
+                            developer
+                        </CustomLink>{' '}
+                        by day and a{' '}
+                        <CustomLink href="https://music.cipri.codes">
+                            musician
+                        </CustomLink>{' '}
+                        by night.
+                    </p>{' '}
+                    <p>Sometimes I also write things.</p>
+                </AboutSub>
             </Inner>
         </>
     );
