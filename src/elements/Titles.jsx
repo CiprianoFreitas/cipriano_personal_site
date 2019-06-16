@@ -22,6 +22,10 @@ export const BigTitle = styled.h1`
     ${tw`leading-none text-5xl lg:text-6xl font-serif text-white mb-6 tracking-wide`};
 `;
 
+export const SmallTitle = styled.h2`
+    ${tw`leading-none text-3xl lg:text-4xl font-serif text-white mb-6 tracking-wide`};
+`;
+
 export const Subtitle = styled.p`
     ${tw`text-2xl lg:text-4xl font-sans text-white mt-8 xxl:w-3/4`};
 `;

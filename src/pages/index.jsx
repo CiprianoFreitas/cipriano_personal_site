@@ -8,7 +8,7 @@ import Layout from '../components/layout';
 
 // Elements
 import Inner from '../elements/Inner';
-import { BigTitle } from '../elements/Titles';
+import { BigTitle, SmallTitle } from '../elements/Titles';
 
 // Views
 import Background from '../elements/Background';
@@ -59,6 +59,28 @@ const Index = ({ data }) => {
                         <p>Sometimes I also write things.</p>
                     </AboutSub>
                 </AboutHero>
+            </Inner>
+            <Inner>
+                <SmallTitle>Stuff I've written</SmallTitle>
+                <ul>
+                    {posts.map(({ node }) => {
+                        const title =
+                            node.frontmatter.title || node.fields.slug;
+                        return (
+                            <li>
+                                <h3>{title}</h3>
+                                <p
+                                    // eslint-disable-next-line react/no-danger
+                                    dangerouslySetInnerHTML={{
+                                        __html:
+                                            node.frontmatter.description ||
+                                            node.excerpt,
+                                    }}
+                                />
+                            </li>
+                        );
+                    })}
+                </ul>
             </Inner>
         </>
     );
