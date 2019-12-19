@@ -36,7 +36,10 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
+        <footer style={{
+          position: 'absolute',
+          bottom: '30px',
+        }}>
           © {new Date().getFullYear()}, Amsterdam 🚵🏻‍♂️
         </footer>
       </div>
