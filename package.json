@@ -1,74 +1,22 @@
 {
-  "name": "gatsby-starter-blog",
-  "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
-  "dependencies": {
-    "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.3.3",
-    "gatsby-image": "^2.0.35",
-    "gatsby-plugin-feed": "^2.1.0",
-    "gatsby-plugin-google-analytics": "^2.0.18",
-    "gatsby-plugin-manifest": "^2.0.25",
-    "gatsby-plugin-netlify": "^2.0.13",
-    "gatsby-plugin-netlify-cms": "^3.0.17",
-    "gatsby-plugin-offline": "^2.0.25",
-    "gatsby-plugin-react-helmet": "^3.0.11",
-    "gatsby-plugin-remove-serviceworker": "^1.0.0",
-    "gatsby-plugin-sharp": "^2.0.32",
-    "gatsby-plugin-styled-components": "^3.0.7",
-    "gatsby-remark-copy-linked-files": "^2.0.11",
-    "gatsby-remark-images": "^2.0.6",
-    "gatsby-remark-prismjs": "^3.2.6",
-    "gatsby-remark-responsive-iframe": "^2.1.1",
-    "gatsby-remark-smartypants": "^2.0.9",
-    "gatsby-source-filesystem": "^2.0.28",
-    "gatsby-transformer-remark": "^2.3.8",
-    "gatsby-transformer-sharp": "^2.1.17",
-    "netlify-cms": "^2.9.0",
-    "prismjs": "^1.16.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0",
-    "react-typography": "^0.16.19",
-    "styled-components": "^4.2.0",
-    "styled-normalize": "^8.0.6",
-    "typeface-lora": "^0.0.72",
-    "typeface-open-sans": "^0.0.54"
-  },
-  "devDependencies": {
-    "babel-preset-gatsby": "^0.1.11",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.16.4"
-  },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "lint": "eslint --fix src/**/*.jsx",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  }
+    "name": "personal-website",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.html",
+    "scripts": {
+        "start": "parcel index.html --open",
+        "build": "parcel build index.html"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "babel-plugin-styled-components": "^1.10.7",
+        "babel-preset-gatsby": "^0.2.35",
+        "parcel-bundler": "^1.6.1"
+    },
+    "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+    "keywords": [
+        "javascript",
+        "starter"
+    ]
 }
