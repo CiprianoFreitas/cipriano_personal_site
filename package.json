@@ -10,13 +10,6 @@
     "dependencies": {},
     "devDependencies": {
         "@babel/core": "^7.0.0",
-        "babel-plugin-styled-components": "^1.10.7",
-        "babel-preset-gatsby": "^0.2.35",
         "parcel-bundler": "^1.6.1"
-    },
-    "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-    "keywords": [
-        "javascript",
-        "starter"
-    ]
+    }
 }
