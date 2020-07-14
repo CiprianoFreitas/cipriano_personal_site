@@ -1,25 +1,26 @@
 body {
-  padding: 2rem;
-  background-color: #46206d;
-  color: #ddcaff;
-  font-family: "Open Sans", sans-serif;
+    padding: 2rem;
+    background-color: #46206d;
+    color: #ddcaff;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1,
 h2,
 h3 {
-  color: #fd3fa1;
-  font-family: "Lora", serif;
+    color: #fd3fa1;
+    font-family: 'Lora', serif;
 }
 
 h1 {
-  font-size: 4rem;
+    font-size: 4rem;
 }
 
 a {
-  color: #e2ff97;
+    color: #e2ff97;
 }
 
 article {
-  max-width: 500px;
+    max-width: 500px;
+    font-size: 2rem;
 }
