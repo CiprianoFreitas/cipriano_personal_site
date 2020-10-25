@@ -14,6 +14,31 @@
             gtag('js', new Date());
 
             gtag('config', 'UA-137563238-1');
+
+            var trackCvClick = function (evt) {
+                if (
+                    typeof ga != 'function' ||
+                    !ga.hasOwnProperty('loaded') ||
+                    ga.loaded != true ||
+                    (event.which != 1 && event.which != 2) ||
+                    !evt ||
+                    !evt.href
+                ) {
+                    return true;
+                }
+                var url = evt.href;
+
+                gtag('event', 'click', {
+                    event_category: 'outbound',
+                    event_label: 'Notion CV',
+                    transport_type: 'beacon',
+                    event_callback: function () {
+                        document.location = url;
+                    },
+                });
+
+                return false;
+            };
         </script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -67,6 +92,7 @@
         <aside>
             Psst, you can check my CV
             <a
+                onclick="return trackCvClick(this)"
                 href="https://www.notion.so/cipriano/Cipriano-Freitas-CV-8a5ca58e211040a78a9b2856c5fa3299"
                 >here</a
             >
