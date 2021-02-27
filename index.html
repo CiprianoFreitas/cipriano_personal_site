@@ -1,104 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-137563238-1"
-        ></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-137563238-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-            gtag('config', 'UA-137563238-1');
+      gtag("config", "UA-137563238-1");
 
-            var trackCvClick = function (evt) {
-                if (
-                    typeof ga != 'function' ||
-                    !ga.hasOwnProperty('loaded') ||
-                    ga.loaded != true ||
-                    (event.which != 1 && event.which != 2) ||
-                    !evt ||
-                    !evt.href
-                ) {
-                    return true;
-                }
-                var url = evt.href;
+      var trackCvClick = function (evt) {
+        if (
+          typeof ga != "function" ||
+          !ga.hasOwnProperty("loaded") ||
+          ga.loaded != true ||
+          (event.which != 1 && event.which != 2) ||
+          !evt ||
+          !evt.href
+        ) {
+          return true;
+        }
+        var url = evt.href;
 
-                gtag('event', 'click', {
-                    event_category: 'outbound',
-                    event_label: 'Notion CV',
-                    transport_type: 'beacon',
-                    event_callback: function () {
-                        document.location = url;
-                    },
-                });
+        gtag("event", "click", {
+          event_category: "outbound",
+          event_label: "Notion CV",
+          transport_type: "beacon",
+          event_callback: function () {
+            document.location = url;
+          }
+        });
 
-                return false;
-            };
-        </script>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Hi, I'm Cipri.</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" type="text/css" href="./src/styles.css" />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/assets/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/assets/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/assets/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/assets/site.webmanifest" />
-    </head>
-    <body>
-        <article>
-            <h1>Hi, I'm Cipri. 👋🏻</h1>
-            <p>
-                My name is Cipriano Freitas and I currently live in Amsterdam
-                helping people book their travels at
-                <a href="https://booking.com">Booking.com</a>. I'm a
-                <a href="https://github.com/CiprianoFreitas">developer</a> by
-                day and a <a href="https://music.cipri.codes">musician</a> by
-                night. Sometimes I also write things.
-            </p>
-            <p>
-                I'm also building <a href="https://oracy.app">Oracy</a> in my
-                free time together with
-                <a href="https://twitter.com/damirkotoric">@damirkotoric</a> and
-                <a href="https://heyrobot.fun">Hey Robot!</a> with
-                <a href="https://twitter.com/ruisilva450">@ruisilva450</a>.
-            </p>
-        </article>
-        <br />
-        <br />
-        <aside>
-            Psst, you can check my CV
-            <a
-                onclick="return trackCvClick(this)"
-                href="https://www.notion.so/cipriano/Cipriano-Freitas-CV-8a5ca58e211040a78a9b2856c5fa3299"
-                >here</a
-            >
-            👀 or contact me directly at
-            <a href="mailto:me@cipri.codes">me@cipri.codes</a>.
-        </aside>
-        <script src="/src/index.js"></script>
-    </body>
+        return false;
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hi, I'm Cipri.</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./src/styles.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+  </head>
+  <body>
+    <article>
+      <h1>Hi, I'm Cipri. 👋🏻</h1>
+      <p>
+        My name is Cipriano Freitas and I currently live in Amsterdam helping
+        people collaborate at
+        <a href="https://Miro.com">Miro.com</a>. I'm a
+        <a href="https://github.com/CiprianoFreitas">developer</a> by day and a
+        <a href="https://music.cipri.codes">musician</a> by night.
+      </p>
+      <p>
+        I'm also building <a href="https://oracy.app">Oracy</a> in my free time
+        together with
+        <a href="https://twitter.com/damirkotoric">@damirkotoric</a> and
+        <a href="https://heyrobot.fun">Hey Robot!</a> with
+        <a href="https://twitter.com/ruisilva450">@ruisilva450</a>.
+      </p>
+    </article>
+    <br />
+    <br />
+    <aside>
+      Psst, you can check my CV
+      <a
+        onclick="return trackCvClick(this)"
+        href="https://www.notion.so/cipriano/Cipriano-Freitas-CV-8a5ca58e211040a78a9b2856c5fa3299"
+        >here</a
+      >
+      👀 or contact me directly at
+      <a href="mailto:me@cipri.codes">me@cipri.codes</a>.
+    </aside>
+    <script src="/src/index.js"></script>
+  </body>
 </html>
